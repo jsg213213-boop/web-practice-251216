@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.container {
+display: flex; /* PC: 가로 배치 (기본값 row) */
+gap: 20px;
+}
+.item {
+background-color: orange;
+flex: 1; /* 공간을 균등하게 차지 */
+padding: 20px;
+text-align: center;
+}
+
+/* 모바일 화면 (768px 이하) 대응 */
+@media screen and (max-width: 768px) {
+.container {
+flex-direction: column; /* 모바일: 세로 배치로 변경 */
+}
+.item {
+background-color: skyblue; /* 색상도 바꿔봄 */
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="item">메뉴 1</div>
+<div class="item">메뉴 2</div>
+<div class="item">메뉴 3</div>
+</div>
+</body>
+</html>

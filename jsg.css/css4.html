@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+/* 기본 스타일 (PC라고 가정) */
+.box {
+width: 30%;
+background-color: red;
+border: 10px solid green;
+}
+
+/* 화면 너비가 600px 이하(max-width)일 때 적용 */
+@media screen and (max-width: 600px) {
+.box {
+width: 601px;
+background-color: blue;
+/* 600px 이하에서는 빨간색으로 덮어씀 */
+}
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+    정성규 css
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습9</title>
+    
+    <style>
+        .btn {
+            /* 기본 버튼 스타일 */
+            width: 200px;
+            height: 100px;
+            pad: 10px 20px;
+            border-radius: 12px;
+            background-color: blueviolet;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+            /* 요구사항 2: 부드러운 변화를 위해 0.5초 설정 */
+            transition: transform 0.5s;
+        }
+
+        .btn:hover {
+            /* 요구사항 1: 마우스를 올렸을 때 1.2배 확대 */
+            transform: scale(1.2);
+            
+            /* (선택 사항) 배경색도 살짝 바뀌면 더 역동적입니다 */
+            background-color: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <button class="btn">실습9</button>
+    </div> 
+
+</body>
+</html>

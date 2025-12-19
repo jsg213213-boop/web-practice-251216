@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습8</title>
+    
+    <style>
+    btn {
+            width: 200px;
+            height: 100px;
+            border: none;
+            border-radius: 12px;
+            background-color: blueviolet;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+            /* 기본 확 변경되기 */
+            /* 옵션 서서히 변경되게  */
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn">실습8 확인</button>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림자 효과 예제</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 100px;
+            background: white;
+            background-color: gold;
+            border-radius: 10px;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            /* 변화를 부드럽게 만들기 (필수!) */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* 같은 효과 
+	        transition: all 0.3s;
+	        transition: 0.3s;
+	        */
+
+        }
+
+        .card:hover {
+            /* 위로 이동하는 효과 */
+            /* transform: translateY(-10px); */
+            /* 1.2배 확대하는 효과 */
+            /* transform: scale(1.2); */
+            /* 회전하는 효과 */
+            transform: rotate(45deg);
+            /* 위로 5px 이동 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* 그림자 강화 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        전환, 변형 효과 주기1
+    </div>
+</body>
+
+</html>

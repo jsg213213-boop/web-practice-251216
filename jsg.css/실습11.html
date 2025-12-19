@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습11</title>
+    <style>
+        /* 실습11 */
+        @keyframes blink {
+            /* 완전히 보이는 상태 */
+            0% { opacity: 1;} 
+            /* 완전히 사라진 상태 */
+            50% { opacity: 0;} 
+            100% { opacity: 1;} 
+        }
+        h1 {
+            color: red;
+            /* animation-name: blink;
+            animation-duration: 1s;
+            animation-iteration-count: infinite; */
+            /* 3줄 코드를 한줄 형식으로  */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: blink 1s infinite;
+        }
+    </style>
+    </head>
+<body>
+    <h1>실습11</h1>
+</body>
+</html>

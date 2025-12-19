@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 300px;
+            /* 1. 박스 너비 */
+            background-color: #f0f0f0;
+            /* 배경색 (패딩 영역까지 칠해짐) */
+
+            padding: 20px;
+            /* 2. 안쪽 여백: 글자가 테두리에 딱 붙지 않게 함 */
+            border: 10px solid blue;
+            /* 3. 테두리: 10px 두께의 파란 실선 */
+            margin: 30px;
+            /* 4. 바깥 여백: 다른 요소와 30px 떨어짐 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        안녕하세요! 박스 모델 테스트입니다.
+        padding이 없으면 글자가 파란 선에 붙어서 답답해 보입니다.
+    </div>
+    <div class="card">
+        두 번째 카드입니다. margin 덕분에 첫 번째 카드와 붙지 않습니다.
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습10</title>
+    
+    <style>
+        .icon {
+            /* 기본 스타일 설정 */
+            width: 200px;
+            height: 100px;
+            pad: 10px 20px;
+            border-radius: 12px;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+            /* 요구사항 3: 모든 변화가 0.4초 동안 부드럽게 발생 */
+            transition: all 1s;
+                }
+
+        /* 요구사항 1, 2: 마우스를 올렸을 때의 변화 */
+        .icon:hover {
+            transform: rotate(360deg); /* 오른쪽으로 360도 회전 */
+            background-color: red;      /* 배경색을 red로 변경 */
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="icon">★</div>
+    </div>
+
+</body>
+</html>
