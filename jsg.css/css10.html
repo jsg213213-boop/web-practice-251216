@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자 응용 실습</title>
+
+    <style>
+        /* 기본 스타일 */
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        a { display: inline-block; margin-bottom: 10px; text-decoration: none; color: #333; }
+
+        /* 1) href에 "https"가 포함된 모든 외부 링크 선택 (*=) */
+        /* 도메인에 관계없이 https만 들어있으면 초록색 굵은 글씨로 변경 */
+        a[href*="https"] {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* 2) href가 ".pdf"로 끝나는 링크 선택 ($=) */
+        /* 선택된 링크 뒤에 가상 요소(::after)로 빨간색 안내 문구 추가 */
+        a[href$=".pdf"]::after {
+            content: " (PDF 문서)";
+            color: red;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        /* 추가 활용: 이미지 파일(.jpg) 배경색 주기 */
+        a[href$=".jpg"] {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>유용한 링크 목록</h2>
+    
+    <a href="https://naver.com">네이버 메인</a>
+    <p>네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요.</p>
+
+    <div>
+        <a href="image_01.jpg">이미지 파일 (JPG)</a><br>
+        <a href="manual.pdf">서비스 이용 설명서</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251222 실습03</title>
+
+    <style>
+        /* 1) 자식 선택자 (>) 사용 */
+        /* .box 바로 아래에 있는 span만 파란색으로 변경 */
+        .box > span {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* 2) 인접 형제 선택자 (+) 사용 */
+        /* h3 바로 다음에 오는 첫 번째 p 태그만 배경색 오렌지로 변경 */
+        h3 + p {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <span>나: 자식 (Child) - 파란색 적용됨</span>
+        <div>
+            <span>나: 손자 (Grandchild) - 제외됨</span>
+        </div>
+        <span>나: 자식 (Child) - 파란색 적용됨</span>
+    </div>
+
+    <hr>
+
+    <h3>기준점 (Header)</h3>
+    <p>첫 번째 문단 - 배경색 오렌지</p>
+    <p>두 번째 문단</p>
+    <p>세 번째 문단</p>
+
+</body>
+</html>

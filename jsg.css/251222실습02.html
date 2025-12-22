@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251222 실습02</title>
+
+    <style>
+        /* 1. 클래스 선택자 선택 */
+        .new-product {
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        /* 2~4. 가상 요소를 사용한 텍스트 삽입 및 스타일링 */
+        .new-product::before {
+            content: 'NEW! '; /* 삽입할 문구 (공백 포함) */
+            color: red;        /* 글자색: 빨강 */
+            font-weight: bold; /* 글자 두께: 굵게 */
+        }
+    </style>
+</head>
+<body>
+
+    <p class="new-product">아이폰 16</p>
+    <p class="new-product">맥북 에어 M3</p>
+
+</body>
+</html>

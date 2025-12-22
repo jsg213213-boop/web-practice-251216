@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 계층 및 형제 선택자 실습</title>
+    <style>
+        /* 기본 여백 설정 */
+        body { font-family: sans-serif; padding: 20px; line-height: 1.8; }
+        div { border: 1px solid #ccc; padding: 15px; border-radius: 8px; }
+
+        /* 1) 후손 선택자 (공백): parent 안의 모든 p를 일단 회색으로 */
+        .parent p { 
+            color: gray; 
+        }
+
+        /* 2) 자식 선택자 (>): parent 바로 밑의 자식 p만 굵게 */
+        /* span 안에 있는 '손자 p'는 선택되지 않습니다. */
+        .parent > p { 
+            font-weight: bold; 
+            text-decoration: underline;
+        }
+
+        /* 3) 인접 형제 선택자 (+): .target 바로 뒤에 붙은 p 하나만 빨간색 */
+        .target + p { 
+            color: red; 
+        }
+
+        /* 4) 일반 형제 선택자 (~): .target 뒤에 오는 모든 p 형제들에게 노란 배경 */
+        /* '자식 2의 형제 1'과 '형제 2' 모두 해당됩니다. */
+        .target ~ p { 
+            background-color: yellow; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS 선택자 관계도 실습</h2>
+
+    <div class="parent">
+        <p>자식 1 (굵게 + 밑줄 + 회색)</p>
+        
+        <span>
+            <p>손자 (회색만 적용 / 자식 선택자 > 에는 선택 안 됨)</p>
+        </span>
+        
+        <p class="target">자식 2 (기준점: 굵게 + 밑줄 + 회색)</p>
+        
+        <p>자식 2의 형제 1 (빨간색 글자 + 노란 배경)</p>
+        
+        <p>자식 2의 형제 2 (회색 글자 + 노란 배경)</p>
+    </div>
+
+</body>
+</html>
