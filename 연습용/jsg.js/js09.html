@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제코드</title>
+    <style>
+        /* 가독성을 위한 간단한 스타일 추가 */
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        #resultText { color: #2c3e50; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>예제코드</h1>
+    
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+    <button id="greetBtn">인사하기</button>
+
+    <h2 id="resultText">결과가 여기에 나옵니다.</h2>
+
+    <script>
+        // HTML 요소를 변수에 저장
+        const input = document.getElementById('nameInput');
+        const btn = document.getElementById('greetBtn');
+        const result = document.getElementById('resultText');
+
+        // 버튼 클릭 이벤트 리스너
+        btn.addEventListener('click', function() {
+            // 1. 입력창에 적힌 값을 가져온다 (.value)
+            const userName = input.value;
+
+            // 2. 가져온 값이 비어있는지 확인 (예외 처리)
+            if (userName === "") {
+                alert("이름을 꼭 입력해주세요!");
+            } else {
+                // 3. 결과를 화면에 보여준다 (.innerText)
+                result.innerText = userName + "님, 환영합니다!";
+
+                // 4. 입력창 비우기 (사용자 편의성)
+                input.value = "";
+                
+                // 5. 다음 입력을 위해 포커스 주기 (선택 사항)
+                input.focus();
+            }
+        });
+    </script>
+
+</body>
+</html>

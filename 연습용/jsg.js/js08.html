@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제코드</title>
+</head>
+<body>
+
+    <h1>예제코드</h1>
+    <p>정성규 홈페이지</p>
+
+    <button id="modeBtn">다크 모드 켜기</button>
+
+    <script>
+        const btn = document.getElementById('modeBtn');
+        let isDark = false; 
+
+        btn.addEventListener('click', function() {
+            if (isDark === false) {
+                // 다크 모드로 변경
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                btn.innerText = "라이트 모드 켜기"; 
+                isDark = true; 
+            } else {
+                // 라이트 모드로 복구
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                btn.innerText = "다크 모드 켜기";
+                isDark = false; 
+            }
+        });
+    </script>
+</body>
+</html>

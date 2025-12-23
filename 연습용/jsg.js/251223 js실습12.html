@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251223 js실습12</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background-color: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #219150; }
+        ul { margin-top: 20px; border-top: 2px solid #eee; padding-top: 20px; }
+        li { background: #f9f9f9; margin-bottom: 5px; padding: 10px; border-radius: 4px; list-style: none; border-left: 5px solid #27ae60; }
+    </style>
+</head>
+<body>
+
+    <h1>🛒 나의 장바구니</h1>
+    
+    <input type="text" id="itemInput" placeholder="사고 싶은 물건">
+    <button id="addBtn">담기</button>
+
+    <ul id="itemList">
+        </ul>
+
+    <script>
+        // 1. 필요한 요소를 변수에 저장
+        const input = document.getElementById('itemInput');
+        const btn = document.getElementById('addBtn');
+        const list = document.getElementById('itemList');
+
+        // 2. 버튼 클릭 이벤트
+        btn.addEventListener('click', function() {
+            const item = input.value;
+
+            if (item !== "") {
+                // 3. innerHTML을 사용하여 ul 태그 안에 li 태그를 누적 추가합니다.
+                // += 기호는 "기존 내용에 새로운 내용을 더하라"는 뜻입니다.
+                list.innerHTML += "<li>" + item + "</li>";
+
+                // 4. 입력창 비우고 포커스 주기
+                input.value = "";
+                input.focus();
+            } else {
+                alert("물건 이름을 입력해주세요!");
+            }
+        });
+    </script>
+
+</body>
+</html>

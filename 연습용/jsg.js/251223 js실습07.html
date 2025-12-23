@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251223 js실습07</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input { padding: 8px; margin-bottom: 10px; }
+        button { padding: 8px 15px; cursor: pointer; }
+        #resultText { color: #2c3e50; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>인사말 서비스</h1>
+    
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+    <br>
+
+    <button id="greetBtn">화면에 인사하기</button>
+
+    <button id="alertBtn">알림창(Alert) 버전</button>
+
+    <h2 id="resultText">결과가 여기에 표시됩니다.</h2>
+
+    <script>
+        // 요소를 변수에 저장
+        const input = document.getElementById('nameInput');
+        const greetBtn = document.getElementById('greetBtn');
+        const alertBtn = document.getElementById('alertBtn'); // 새 버튼
+        const result = document.getElementById('resultText');
+
+        // [기능 1] 기존 버튼: 화면에 글씨 띄우기
+        greetBtn.addEventListener('click', function() {
+            const userName = input.value;
+            if (userName === "") {
+                alert("이름을 입력해주세요!");
+            } else {
+                result.innerText = userName + "님 안녕하세요!";
+            }
+        });
+
+        // [기능 2] 실습 7: 알림창(Alert) 버전 기능 구현
+        alertBtn.addEventListener('click', function() {
+            // 1. 입력창에 적힌 값을 가져온다.
+            const userName = input.value;
+
+            // 2. 값이 비어있는지 확인한다.
+            if (userName === "") {
+                alert("이름을 먼저 입력해주세요!");
+            } else {
+                // 3. alert() 창으로 메시지를 띄운다.
+                alert(userName + "님 안녕하세요!");
+                
+                // 4. (센스!) 입력창 비우기
+                input.value = "";
+                input.focus();
+            }
+        });
+    </script>
+
+</body>
+</html>

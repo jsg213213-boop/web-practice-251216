@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251223 js실습05</title>
+    <style>
+        /* 가독성을 위한 기초 스타일 */
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        input { padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+        #resultText { margin-top: 30px; color: #333; }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+    <button id="greetBtn">입력 완료</button>
+
+    <h2 id="resultText">여기 인사말이 나옵니다.</h2>
+
+    <script>
+        // 1. input, button, h2 세 가지 요소를 모두 변수에 저장하세요.
+        const nameInput = document.getElementById('nameInput');
+        const greetBtn = document.getElementById('greetBtn');
+        const resultText = document.getElementById('resultText');
+
+        // 2. 버튼을 클릭했을 때 실행될 함수를 만드세요.
+        greetBtn.addEventListener('click', function() {
+            
+            // 3. 클릭하면 입력창(input)에 적힌 내용을 가져오세요.
+            const userName = nameInput.value;
+
+            // 4. 가져온 내용을 이용해 h2 태그의 글자(innerText)를 변경하세요.
+            if (userName === "") {
+                alert("이름을 입력해 주세요!");
+            } else {
+                resultText.innerText = "반갑습니다, " + userName + "님!";
+                resultText.style.color = "green"; // 보너스: 글자 색상도 예쁘게 바꿔보기
+              }
+        });
+    </script>
+
+</body>
+</html>

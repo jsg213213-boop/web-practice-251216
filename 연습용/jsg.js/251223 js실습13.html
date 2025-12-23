@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251223 js실습13</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 400px; }
+        input { padding: 8px; width: 60%; }
+        button { padding: 8px 15px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #2980b9; }
+        ul { margin-top: 20px; padding-left: 20px; }
+        li { margin-bottom: 5px; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>중복 없는 장바구니</h1>
+        
+        <input type="text" id="itemInput" placeholder="상품명을 입력하세요">
+        <button id="addBtn">담기</button>
+
+        <ul id="itemList">
+            </ul>
+    </div>
+
+    <script>
+        // 1. 초기 변수 설정
+        let cart = []; // 데이터를 저장할 배열
+        const input = document.getElementById('itemInput');
+        const btn = document.getElementById('addBtn');
+        const list = document.getElementById('itemList');
+
+        btn.addEventListener('click', function() {
+            const item = input.value.trim(); // trim()은 앞뒤 공백을 제거해줍니다.
+
+            // 빈 값 입력 방지
+            if (item === "") {
+                alert("상품명을 입력해주세요!");
+                return;
+            }
+
+            // [핵심] 1. if 문으로 중복 검사를 먼저 수행합니다.
+            if (cart.includes(item)) {
+                // 2. 이미 배열에 해당 값이 있다면 알림창을 띄웁니다.
+                alert("이미 장바구니에 있습니다!");
+            } else {
+                // 3. 포함되어 있지 않다면(else) 배열에 추가하고 화면에 보여줍니다.
+                cart.push(item);
+                list.innerHTML += "<li>" + item + "</li>";
+            }
+
+            // 입력창 초기화
+            input.value = "";
+            input.focus();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제코드</title>
+</head>
+<body>
+    <h1 id="title">예제코드</h1>
+    <button id="changeBtn">색상 변경하기</button>
+
+    <script>
+        // 1. 요소 잡아오기 (변수에 저장)
+        const myTitle = document.getElementById('title');
+        const myBtn = document.getElementById('changeBtn');
+
+        // 수정 포인트 2: 요소가 정상적으로 존재하는지 확인 후 리스너를 붙입니다.
+        if (myBtn && myTitle) {
+            // 2. 버튼에 '경비원(리스너)' 붙이기
+            myBtn.addEventListener('click', function() {
+                // 3. 클릭되었을 때 실행할 코드
+                myTitle.style.color = 'blue';
+                myTitle.style.backgroundColor = 'yellow';
+                alert('색상이 변경되었습니다!'); 
+            });
+        }
+    </script>
+</body>
+</html>

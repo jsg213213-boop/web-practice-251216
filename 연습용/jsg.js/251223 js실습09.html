@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251223 js실습09</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .preview { margin-top: 20px; padding: 15px; background-color: #e3f2fd; border-radius: 4px; min-height: 24px; word-break: break-all; }
+        #liveText { color: #1976d2; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>실시간 따라쓰기</h1>
+        <p>아래 입력창에 글자를 써보세요. 실시간으로 반영됩니다!</p>
+        
+        <input type="text" id="liveInput" placeholder="여기에 내용을 입력하세요...">
+
+        <div class="preview">
+            입력된 내용: <span id="liveText"></span>
+        </div>
+    </div>
+
+    <script>
+        // 1. 제어할 요소들을 변수에 저장
+        const liveInput = document.getElementById('liveInput');
+        const liveText = document.getElementById('liveText');
+
+        // 2. 'click' 대신 'input' 이벤트를 사용합니다.
+        // input 이벤트는 글자가 추가, 삭제될 때마다 발생합니다.
+        liveInput.addEventListener('input', function() {
+            // 3. 현재 입력창의 값을 가져와서 span 태그에 바로 넣어줍니다.
+            const currentVal = liveInput.value;
+            
+            if (currentVal === "") {
+                liveText.innerText = "내용이 없습니다.";
+            } else {
+                liveText.innerText = currentVal;
+            }
+        });
+    </script>
+
+</body>
+</html>

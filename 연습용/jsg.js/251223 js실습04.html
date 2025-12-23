@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>251223 js실습04</title>
+</head>
+<body>
+
+  <p id="price">50,000원</p>
+
+  <script>
+    // 2. JS에서 ID가 "price"인 태그를 찾아 변수에 저장합니다.
+    const priceTag = document.getElementById('price');
+
+    // 3. 텍스트를 할인가와 세일 문구로 변경합니다.
+    priceTag.innerText = "30,000원 (세일 중!)";
+
+    // 4. 글자 색을 빨간색으로 변경합니다.
+    priceTag.style.color = "red";
+
+    // 5. 글자 크기를 30px로 키워서 강조합니다.
+    priceTag.style.fontSize = "30px";
+  </script>
+
+</body>
+</html>

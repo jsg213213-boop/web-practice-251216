@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM 조작 연습</title>
+</head>
+<body>
+<h1 id="heading">안녕하세요?</h1>
+<p id="text">저는 평범한 문장입니다.</p>
+
+<script>
+// 2. JS로 태그 찾아오기
+const h1Tag = document.getElementById("heading");
+const pTag = document.getElementById("text");
+
+// 3. 내용 바꾸기
+h1Tag.innerText = "반갑습니다! JS로 바꿨어요.";
+
+// 4. 스타일(색상) 바꾸기
+pTag.style.color = "blue";
+pTag.style.fontWeight = "bold";
+</script>
+</body>
+</html>

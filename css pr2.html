@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정성규 CSS</title>
+
+     <style>
+        /* 1. 태그 선택자: 모든 p 태그에 적용 */
+        p {
+            color: gray;
+        }
+
+        /* 2. 클래스 선택자: class="highlight"인 요소에만 적용 (앞에점 . 필수) */
+        .highlight {
+            background-color: yellow;
+            font-size: 20px;
+        }
+
+        /* 3. 아이디 선택자: id="header"인 유일한 요소에 적용 (앞에 # 필수) */
+        #header {
+            text-align: center;
+            color: blue;
+        }
+
+        h2 {
+            color: #0000ff
+        }
+
+        div {
+            background-color: #ccc;
+        }
+        /* 실습 - 기본예시 */
+        /* 1 설정 */
+        .btn-primary {
+            /* () 소괄호
+            {} 중괄호 : 이친구를 사용함. 
+            [] 대괄호*/
+             background-color : orange;
+             color : white;
+             font-size : 18px;
+        }
+
+    </style>
+</head>
+
+<!-- body 부모 태그 -->
+<body>
+    <!-- 안에 있는 태그가 자식 태그 -->
+    <h1 id="header">정성규 CSS 작업 연습장</h1>
+    <p>일반 문단입니다.</p>
+    <p class="highlight">강조된 문단입니다.</p>
+
+    <h3 id="header">여기에 아이디가 header 인 css 요소를 적용해보기</h3>
+
+    <h2>css 설정 후, 태그에 적용하기1</h2>
+    <div>
+        div 태그에 css 설정 후, 태그에 적용하기
+    </div>
+    <!-- 2. 적용하기 -->
+    <p class="btn-primary">css 기본 설정 및 적용 연습중입니다. </p>
+</body>
+
+</html>
