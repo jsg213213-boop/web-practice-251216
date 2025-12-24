@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251224 js실습02</title>
+</head>
+<body>
+
+    <div id="profileCard"></div>
+
+    <script>
+        // 1. 데이터 준비 (배열이 포함된 객체)
+        const developer = {
+            name: "정성규",
+            role: "웹 개발자",
+            skills: ["HTML", "CSS", "JavaScript"],
+            isLeader: true
+        };
+
+        // 2. 화면 요소 가져오기
+        const card = document.getElementById('profileCard');
+
+        // 3. 데이터를 HTML로 변환하여 삽입
+        // - join(' / '): 배열의 요소들을 ' / '로 연결하여 하나의 문자열로 만듭니다.
+        // - 삼항 연산자: isLeader의 불리언 값에 따라 "팀장" 또는 "팀원"을 선택합니다.
+        card.innerHTML = `
+            <h2>이름: ${developer.name}</h2>
+            <p>직업: ${developer.role}</p>
+            <p>기술: ${developer.skills.join(' / ')}</p>
+            <p>직책: ${developer.isLeader ? "팀장" : "팀원"}</p>
+        `;
+    </script>
+
+</body>
+</html>

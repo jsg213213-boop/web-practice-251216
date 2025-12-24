@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251224 js실습03</title>
+</head>
+<body>
+
+    <div id="postBox"></div>
+    <button id="likeBtn">좋아요 누르기</button>
+
+    <script>
+        // 1. 데이터 준비 (객체)
+        let post = {
+            title: "오늘의 일기",
+            likes: 0
+        };
+
+        // 2. 화면 요소 가져오기
+        const postBox = document.getElementById('postBox');
+        const likeBtn = document.getElementById('likeBtn');
+
+        // 3. 화면을 그리는 기능을 함수로 만듭니다. (중복 방지)
+        function render() {
+            postBox.innerHTML = `
+                <h2>제목: ${post.title}</h2>
+                <p>좋아요 수: ${post.likes}개</p>
+            `;
+        }
+
+        // 처음 실행 시 화면을 한 번 그립니다.
+        render();
+
+        // 4. 버튼 클릭 이벤트 설정
+        likeBtn.addEventListener('click', function() {
+            // 데이터 변경
+            post.likes++; 
+            console.log("현재 좋아요:", post.likes);
+
+            // 중요: 데이터가 바뀌었으므로 화면을 다시 그려줍니다.
+            render();
+        });
+    </script>
+
+</body>
+</html>

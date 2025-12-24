@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>251224 js실습04</title>
+</head>
+<body>
+
+    <h2>여행지 버킷리스트</h2>
+    
+    <div id="travel-list" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
+
+    <script>
+        // 1. 데이터 준비 (도시명과 이미지 주소)
+        const places = [
+            { city: "파리", img: "파리.jpg"},
+            { city: "뉴욕", img: "뉴욕.jpg" },
+            { city: "서울", img: "서울.jpg" }
+        ];
+
+        // 2. 화면 요소 가져오기
+        const travelContainer = document.getElementById('travel-list');
+
+        // 3. 반복문으로 갤러리 카드 생성
+        places.forEach(function(item) {
+            // item.img에 담긴 주소를 img 태그의 src 속성에 넣는 것이 핵심입니다.
+            travelContainer.innerHTML += `
+                <div style="border: 1px solid #ddd; padding: 10px; border-radius: 10px; text-align: center;">
+                    <img src="${item.img}" alt="${item.city}" style="width: 200px; height: 150px; border-radius: 5px; display: block; margin-bottom: 10px;">
+                    <strong style="font-size: 18px;">${item.city}</strong>
+                </div>
+            `;
+        });
+    </script>
+
+</body>
+</html>

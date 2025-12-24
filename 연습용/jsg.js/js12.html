@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제코드</title>
+</head>
+<body>
+
+    <div id="card"></div>
+
+    <script>
+        // 1. 데이터 준비 (객체)
+        let phone = {
+            model: "갤럭시 S24",
+            price: 1150000,
+            isStock: true // 재고 있음
+        };
+
+        // 2. 화면 요소 가져오기
+        const cardBox = document.getElementById('card');
+
+        // 3. 객체의 정보를 꺼내서 HTML로 만들기
+        // 템플릿 리터럴(백틱) 안에서 ${ }를 사용해 변수를 삽입합니다.
+        // 삼항 연산자(isStock ? "A" : "B")를 사용해 재고 상태를 텍스트로 변환합니다.
+        cardBox.innerHTML = `
+            <h3>제품명: ${phone.model}</h3>
+            <p>가격: ${phone.price}원</p>
+            <p>재고상태: <span class="status">${phone.isStock ? "구매가능" : "품절"}</span></p>
+        `;
+    </script>
+
+</body>
+</html>
