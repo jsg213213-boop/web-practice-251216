@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>골드 투두 앱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg border-t-8 border-amber-400">
+        
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+            ✨ 나의 할 일 목록
+        </h2>
+
+        <div class="mb-8">
+            <h3 class="text-sm font-bold text-gray-500 mb-2 uppercase tracking-wider">Search</h3>
+            <div class="flex gap-2">
+                <input type="text" id="searchBox" placeholder="할 일 검색..." 
+                    class="flex-1 p-3 bg-blue-50 border border-blue-100 rounded-lg outline-none focus:ring-2 focus:ring-blue-400 transition">
+                <button id="searchBtn" 
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition shadow-md">
+                    검색
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-sm font-bold text-gray-500 mb-2 uppercase tracking-wider">Input Task</h3>
+            <div class="flex gap-2">
+                <input type="text" id="taskInput" placeholder="새로운 할 일을 적으세요" 
+                    class="flex-1 p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-amber-400 transition">
+                <button id="addBtn" 
+                    class="bg-amber-400 hover:bg-amber-500 text-white px-6 py-2 rounded-lg font-medium transition shadow-md">
+                    추가
+                </button>
+            </div>
+        </div>
+
+        <ul id="taskList" class="space-y-3">
+            </ul>
+        
+    </div>
+
+</body>
+</html>
