@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정성규의 고양이카페 방문 버킷리스트</title>
+</head>
+<body>
+
+    <h2>정성규의 고양이카페 방문 버킷리스트</h2>
+    
+    <div id="travel-list" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
+
+    <script>
+        // 1. 데이터 준비 (도시명과 이미지 주소)
+        const places = [
+            { city: "고양이카페존01", img: "고양이카페존01.jpg"},
+            { city: "고양이카페존02", img: "고양이카페존02.jpg" },
+            { city: "고양이카페존03", img: "고양이카페존03.jpg" },
+            { city: "고양이카페존04", img: "고양이카페존04.jpg"},
+            { city: "고양이카페존05", img: "고양이카페존05.jpg" },
+            { city: "고양이카페존06", img: "고양이카페존06.jpg" },
+            { city: "고양이카페존07", img: "고양이카페존07.jpg"},
+            { city: "아비시니안고양이", img: "아비시니안고양이.jpg"},
+            { city: "스코티쉬폴드고양이", img: "스코티쉬폴드고양이.jpg" },
+            { city: "메이쿤고양이", img: "메이쿤고양이.jpg" },
+            { city: "노르웨이숲고양이", img: "노르웨이숲고양이.jpg" },
+            { city: "샴고양이", img: "샴고양이.jpg" },
+            { city: "아메리칸숏헤어고양이", img: "아메리칸숏헤어고양이.jpg"},
+            { city: "페르시안고양이", img: "페르시안고양이.jpg" },
+            { city: "엑죠틱숏헤어고양이", img: "엑죠틱숏헤어고양이.jpg" },
+            { city: "랙돌고양이", img: "랙돌고양이.jpg"},
+            { city: "브리튀숏헤어고양이", img: "브리튀숏헤어고양이.jpg" },
+            { city: "먼치킨고양이", img: "먼치킨고양이.jpg" }
+        ];
+
+        // 2. 화면 요소 가져오기
+        const travelContainer = document.getElementById('travel-list');
+
+        // 3. 반복문으로 갤러리 카드 생성
+        places.forEach(function(item) {
+            // item.img에 담긴 주소를 img 태그의 src 속성에 넣는 것이 핵심입니다.
+            travelContainer.innerHTML += `
+                <div style="border: 1px solid #ddd; padding: 10px; border-radius: 10px; text-align: center;">
+                    <img src="${item.img}" alt="${item.city}" style="width: 250px; height: 250px; border-radius: 5px; display: block; margin-bottom: 10px;">
+                    <strong style="font-size: 18px;">${item.city}</strong>
+                </div>
+            `;
+        })
+    </script>
+
+</body>
+</html>
